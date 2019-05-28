@@ -1,3 +1,4 @@
+# Lint problems fixed by FToth
 
 ## Angular Ngrx Course
 
