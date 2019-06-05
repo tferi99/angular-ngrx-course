@@ -1,6 +1,3 @@
-
-
-
 import {Injectable} from "@angular/core";
 import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from "@angular/router";
 import {Course} from "../model/course";
@@ -12,8 +9,6 @@ import {filter, first, tap} from "rxjs/operators";
 import {selectCourseById} from '../course.selectors';
 import {CourseRequested} from '../course.actions';
 
-
-
 @Injectable()
 export class CourseResolver implements Resolve<Course> {
 
@@ -23,7 +18,6 @@ export class CourseResolver implements Resolve<Course> {
     }
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Course> {
-
         const courseId = route.params['id'];
 
         return this.store
@@ -36,9 +30,7 @@ export class CourseResolver implements Resolve<Course> {
             }),
             filter(course => !!course),
             first()
-          )
-
+          );
     }
-
 }
 
