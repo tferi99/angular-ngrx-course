@@ -9,7 +9,7 @@ import {
   LessonsPageRequested
 } from './course.actions';
 import {throwError,of} from 'rxjs';
-import {catchError, concatMap, exhaustMap, filter, map, mergeMap, withLatestFrom} from "rxjs/operators";
+import {catchError, concatMap, exhaustMap, filter, map, mergeMap, withLatestFrom} from 'rxjs/operators';
 import {CoursesService} from './services/courses.service';
 import {AppState} from '../reducers';
 import {select, Store} from '@ngrx/store';
@@ -43,8 +43,7 @@ export class CourseEffects {
     .pipe(
       ofType<LessonsPageRequested>(CourseActionTypes.LessonsPageRequested),
       mergeMap(({payload}) =>
-              this.coursesService.findLessons(payload.courseId,
-                          payload.page.pageIndex, payload.page.pageSize)
+              this.coursesService.findLessons(payload.courseId, payload.page.pageIndex, payload.page.pageSize)
                 .pipe(
                   catchError(err => {
                     console.log('error loading a lessons page ', err);
