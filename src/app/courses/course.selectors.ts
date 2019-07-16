@@ -1,19 +1,15 @@
 import {createFeatureSelector, createSelector} from '@ngrx/store';
 import {CoursesState} from './course.reducers';
-
 import * as fromCourse from './course.reducers';
-
 import * as fromLesson from './lessons.reducers';
-
 import {PageQuery} from './course.actions';
 import {LessonsState} from './lessons.reducers';
 
-export const selectCoursesState = createFeatureSelector<CoursesState>("courses");
+export const selectCoursesState = createFeatureSelector<CoursesState>('courses');
+export const selectLessonsState = createFeatureSelector<LessonsState>('lessons');
 
-export const selectLessonsState = createFeatureSelector<LessonsState>("lessons");
 
-
-export const selectCourseById = (courseId:number) => createSelector(
+export const selectCourseById = (courseId: number) => createSelector(
   selectCoursesState,
   coursesState => coursesState.entities[courseId]
 );
@@ -22,7 +18,6 @@ export const selectCourseById = (courseId:number) => createSelector(
 export const selectAllCourses = createSelector(
   selectCoursesState,
   fromCourse.selectAll
-
 );
 
 export const selectBeginnerCourses = createSelector(
@@ -69,7 +64,6 @@ export const selectLessonsPage = (courseId:number, page:PageQuery) => createSele
   }
 
 );
-
 
 export const selectLessonsLoading = createSelector(
   selectLessonsState,

@@ -2,8 +2,6 @@ import {Course} from './model/course';
 import {createEntityAdapter, EntityAdapter, EntityState} from '@ngrx/entity';
 import {CourseActions, CourseActionTypes} from './course.actions';
 
-
-
 export interface CoursesState extends EntityState<Course> {
   allCoursesLoaded: boolean;
 }
@@ -32,7 +30,6 @@ export const {
   selectEntities,
   selectIds,
   selectTotal
-
 } = adapter.getSelectors();
 
 
