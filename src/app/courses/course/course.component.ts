@@ -22,7 +22,7 @@ export class CourseComponent implements OnInit, AfterViewInit {
   dataSource: LessonsDataSource;
   displayedColumns = ['seqNo', 'description', 'duration'];
 
-  @ViewChild(MatPaginator)
+  @ViewChild(MatPaginator, {static: false})
   paginator: MatPaginator;
 
   loading$: Observable<boolean>;

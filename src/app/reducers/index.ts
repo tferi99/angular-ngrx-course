@@ -1,13 +1,5 @@
-import {
-  ActionReducer,
-  ActionReducerMap,
-  createFeatureSelector,
-  createSelector,
-  MetaReducer
-} from '@ngrx/store';
-import { environment } from '../../environments/environment';
-import {User} from '../model/user.model';
-import {AuthActions, AuthActionTypes} from '../auth/auth.actions';
+import {ActionReducerMap, MetaReducer} from '@ngrx/store';
+import {environment} from '../../environments/environment';
 import {storeFreeze} from 'ngrx-store-freeze';
 import {routerReducer} from '@ngrx/router-store';
 
